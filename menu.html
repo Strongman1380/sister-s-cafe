@@ -3,34 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="View the full menu at Sisters Cafe in Geneva, NE." />
-  <meta name="keywords" content="Sisters Cafe menu, Geneva NE food, homemade dishes" />
+  <meta name="description" content="View the full menu at Sisters Cafe in Geneva, NE. From appetizers to drinks, explore our homemade dishes." />
+  <meta name="keywords" content="Sisters Cafe menu, Geneva NE food, homemade dishes, appetizers, sandwiches, drinks" />
   <title>Sisters Cafe - Menu</title>
-  <script src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="48060"></script>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+  <script src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="48060"></script>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar sticky">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="images/sisters-logo.jpeg" alt="sisters logo" class="logo" /></a>
-      
+      <a class="navbar-brand" href="https://strongman1380.github.io/www.sisterscafe.com/index.html">
+        <img src="https://strongman1380.github.io/www.sisterscafe.com/images/sisters-logo.jpeg" alt="Sisters Logo" class="logo" />
+      </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://strongman1380.github.io/www.sisterscafe.com/index.html">Home</a></li>
+        <li><a href="https://strongman1380.github.io/www.sisterscafe.com/menu.html">Menu</a></li>
+        <li><a href="https://strongman1380.github.io/www.sisterscafe.com/about.html">About Us</a></li>
+        <li><a href="https://strongman1380.github.io/www.sisterscafe.com/contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Dynamic Menu Container -->
   <div class="container">
     <h2>Our Menu</h2>
-    <div id="menu-container"></div> <!-- Script will render menu here -->
+    <input type="text" id="menu-search" placeholder="Search menu items..." />
+    <div id="menu-container">
+      <!-- Menu items will be populated by script.js -->
+    </div>
 
-    <!-- Cart Summary -->
     <section class="menu-section">
       <h3>Your Order</h3>
       <ul id="cart-items"></ul>
@@ -42,20 +43,10 @@
     </section>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 Sisters Cafe | 
-      <a href="https://www.facebook.com/profile.php?id=61573728355131" target="_blank">
-        <img src="images/Facebooklogo.jpeg" alt="Facebook" style="height: 20px; vertical-align: middle;" />
-      </a>
-    </p>
+    <p>© 2025 Sisters Cafe | <a href="https://www.facebook.com/profile.php?id=61573728355131" target="_blank"><img src="https://strongman1380.github.io/www.sisterscafe.com/images/Facebooklogo.jpeg" alt="Facebook Logo" style="height: 20px; vertical-align: middle;"></a></p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    emailjs.init("GrZesY7oeZxe3C2TS");
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
