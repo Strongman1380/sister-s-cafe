@@ -1,0 +1,589 @@
+/* Menu Styles */
+.menu-category {
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.menu-category h3 {
+  color: #8b2c00;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.item-price {
+  font-weight: 700;
+  color: #8b2c00;
+  margin: 0 15px;
+}
+
+.btn-add-to-cart {
+  background-color: #8b2c00;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #a33800;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-add-to-cart:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-add-to-cart.added {
+  background-color: #28a745;
+}
+
+.btn-add-to-cart.added:hover {
+  background-color: #218838;
+}
+
+.btn-add-to-cart .btn-feedback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.btn-add-to-cart.clicked .btn-feedback {
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Cart Styles */
+#cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+#cart-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.btn-remove-item {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Order Calculator Styles */
+.calculator-section {
+  background-color: #fff9f4;
+  border: 3px solid #8b2c00;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.calculator-section::before {
+  content: "Calculate Your Order";
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  background-color: #8b2c00;
+  color: white;
+  padding: 5px 40px;
+  font-weight: bold;
+  transform: rotate(45deg);
+  font-size: 0.8rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.calculator-section h3 {
+  color: #8b2c00;
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.calculator-input {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #8b2c00;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 44, 0, 0.2);
+}
+
+.btn-calculate {
+  background-color: #8b2c00;
+  color: white;
+  padding: 12px;
+  font-size: 1.1em;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-calculate:hover {
+  background-color: #a33800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-use-cart {
+  background-color: #28a745;
+  color: white;
+  padding: 12px;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.btn-use-cart:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.calculator-result {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.calculator-result h4 {
+  color: #8b2c00;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.2em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.result-row.total {
+  font-weight: 700;
+  color: #8b2c00;
+  font-size: 1.3em;
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.result-row.per-person {
+  font-weight: 700;
+  color: #28a745;
+  font-size: 1.2em;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#confirmation-modal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#confirmation-modal[style*="display: flex"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active .modal-container {
+  transform: translateY(0);
+}
+
+.modal-header {
+  background-color: #8b2c00;
+  color: white;
+  padding: 15px 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.order-summary {
+  margin-bottom: 20px;
+}
+
+.order-items {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.order-totals {
+  font-size: 1.1em;
+}
+
+.order-total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.order-total-row.final {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #8b2c00;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.order-message {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Online Order Form Styles */
+.order-type-selection {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.order-type-btn {
+  flex: 1;
+  padding: 12px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.order-type-btn.active {
+  background-color: #8b2c00;
+  color: white;
+  border-color: #8b2c00;
+}
+
+.order-type-btn:hover:not(.active) {
+  background-color: #e0e0e0;
+}
+
+#online-order-form {
+  margin-top: 20px;
+}
+
+#online-order-form h4 {
+  color: #8b2c00;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #8b2c00;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 44, 0, 0.2);
+}
+
+/* Floating Notification */
+.floating-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.floating-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.notification-content i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+/* Order Summary Sticky */
+.order-summary-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  z-index: 900;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.order-summary-sticky.show {
+  transform: translateY(0);
+}
+
+.order-summary-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.order-summary-details {
+  display: flex;
+  align-items: center;
+}
+
+.order-summary-details p {
+  margin: 0 15px 0 0;
+}
+
+.order-summary-total {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #8b2c00;
+}
+
+.order-summary-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-container {
+    width: 95%;
+  }
+  
+  .order-summary-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .order-summary-details {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .order-summary-actions {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .order-summary-actions button {
+    flex: 1;
+    min-width: 120px;
+    margin-bottom: 5px;
+  }
+  
+  /* Calculator responsive styles */
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .calculator-section {
+    padding: 15px;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  .calculator-result {
+    margin-top: 20px;
+  }
+}

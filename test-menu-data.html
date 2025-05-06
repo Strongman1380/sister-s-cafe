@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Menu Data</title>
+  <script src="menu-data.js"></script>
+</head>
+<body>
+  <h1>Menu Data Test</h1>
+  <div id="output"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const outputDiv = document.getElementById('output');
+      
+      // Check if menuData is available
+      if (window.menuData && window.menuData.length > 0) {
+        outputDiv.innerHTML = '<p style="color: green;">Menu data loaded successfully!</p>';
+        
+        // Display the first category as a test
+        const firstCategory = window.menuData[0];
+        if (firstCategory) {
+          outputDiv.innerHTML += `<p>First category: ${firstCategory.category}</p>`;
+          outputDiv.innerHTML += `<p>Number of items: ${firstCategory.items.length}</p>`;
+          outputDiv.innerHTML += `<p>First item: ${firstCategory.items[0].name} - $${firstCategory.items[0].price.toFixed(2)}</p>`;
+        }
+      } else {
+        outputDiv.innerHTML = '<p style="color: red;">Error: Menu data not loaded!</p>';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body{
+    background-color:lightyellow;
+}/*This creates background color*/
+.pagelinks{
+    color: rgb(13, 117, 208);
+font-size: 25px;
+text-align: left;
+text-transform: capitalize;
+display: grid; 
+grid-auto-flow: column; 
+gap: 200px; 
+}/*This is styling the hyperlinks and making sure they are spaced apart*/
+.noverbaltitle{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: oblique;}/*This is styling the title of nonverbal seciton*/
+.verbaltitle{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: oblique}/*This is styling the title of visual seciton*/
+.visualtitle{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: oblique;}/*This is styling the title of visual seciton*/
+.weblinks{
+    text-align: center;
+    text-decoration-color: red;
+}/* this is taking all the web links, styling them, and when you click them they turn red. Text is centered*/
+button{
+    background-color: rgb(174, 244, 241);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: monospace;
+    color: white;
+    padding: 20px;
+    margin-left: 10px;
+    text-align: center;
+    cursor: pointer;
+}/*- This is styling all the buttons, the types of style should be explanatory based upon their title*/

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View the full menu at Sisters Cafe in Geneva, NE. From appetizers to drinks, explore our homemade dishes." />
+  <meta name="keywords" content="Sisters Cafe menu, Geneva NE food, homemade dishes, appetizers, sandwiches, drinks" />
+  <title>Sisters Cafe - Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="menu-styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar sticky">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/sisters-logo.jpeg" alt="Sisters Cafe Logo" class="logo" />
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger-icon"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="menu_new.html" aria-current="page"><i class="fas fa-utensils"></i> Menu</a></li>
+        <li><a href="about.html"><i class="fas fa-users"></i> About Us</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li class="phone-link"><a href="tel:4027594144"><i class="fas fa-phone"></i> (402) 759-4144</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Our Menu</h2>
+    <p style="text-align: center; margin-bottom: 20px;">Enjoy our homemade dishes made with love and the freshest ingredients</p>
+    
+    <div class="online-order-banner" id="order-online" style="background-color: #28a745; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <h3 style="margin: 0 0 10px 0; color: white;">Order Online for Pickup</h3>
+      <p style="margin: 0 0 10px 0;">Browse our menu, add items to your cart, and submit your order for pickup!</p>
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <a href="#menu-container" class="btn" style="background-color: white; color: #28a745; font-weight: bold;">
+          <i class="fas fa-utensils"></i> Start Ordering
+        </a>
+        <a href="tel:4027594144" class="btn" style="background-color: rgba(255,255,255,0.2); color: white;">
+          <i class="fas fa-phone"></i> Call Instead: (402) 759-4144
+        </a>
+      </div>
+    </div>
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <input type="text" id="menu-search" placeholder="Search menu items..." />
+      <div>
+        <label for="category-filter" style="margin-right: 10px;">Filter by:</label>
+        <select id="category-filter" style="padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+          <option value="all">All Categories</option>
+          <option value="Appetizers">Appetizers</option>
+          <option value="Soups">Soups</option>
+          <option value="Sandwiches">Sandwiches</option>
+          <option value="Dinner Meals">Dinner Meals</option>
+          <option value="Baskets">Baskets</option>
+          <option value="Salads">Salads</option>
+          <option value="Sides">Sides</option>
+          <option value="Eggs & Toast">Eggs & Toast</option>
+          <option value="Drinks">Drinks</option>
+        </select>
+      </div>
+    </div>
+    
+    <div id="menu-container">
+      <!-- Menu items will be populated by script.js -->
+    </div>
+
+    <section class="menu-section">
+      <h3>Your Order</h3>
+      <ul id="cart-items"></ul>
+      <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 15px;">
+        <p><strong>Items:</strong> <span id="cart-count">0</span></p>
+        <p><strong>Subtotal:</strong> $<span id="cart-subtotal">0.00</span></p>
+        <p><strong>Tax (7.5%):</strong> $<span id="cart-tax">0.00</span></p>
+        <p><strong>Total:</strong> $<span id="cart-total">0.00</span></p>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: 15px;">
+        <button id="checkout-btn" class="btn" style="background-color: #28a745; color: white; font-weight: bold; flex: 2;">
+          <i class="fas fa-shopping-cart"></i> Checkout
+        </button>
+        <button id="clear-cart-btn" class="btn" style="background-color: #dc3545; color: white; flex: 1;">
+          <i class="fas fa-trash"></i> Clear
+        </button>
+      </div>
+    </section>
+    
+    <section class="menu-section calculator-section" style="border: 2px solid var(--primary-color); background-color: #fff9f4; margin-top: 3rem;">
+      <h3 style="color: var(--primary-color); font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem;">Order Total Calculator</h3>
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <p style="font-size: 1.1rem;">Calculate the total cost including tax and optional tip:</p>
+        <p style="font-style: italic; color: var(--primary-color); margin-top: 0.5rem;">Add items to your cart and use the calculator to see your total!</p>
+      </div>
+      
+      <div class="calculator-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; background-color: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+        <div class="calculator-input" style="flex: 1; min-width: 280px;">
+          <div class="input-group" style="margin-bottom: 1rem;">
+            <label for="people-count" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Number of People:</label>
+            <input type="number" id="people-count" min="1" value="1" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 1rem;">
+          </div>
+          
+          <div class="input-group" style="margin-bottom: 1rem;">
+            <label for="avg-meal-cost" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Average Meal Cost ($):</label>
+            <input type="number" id="avg-meal-cost" min="0" step="0.01" value="10.00" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 1rem;">
+          </div>
+          
+          <div class="input-group" style="margin-bottom: 1.5rem;">
+            <label for="tip-percentage" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Tip Percentage (%):</label>
+            <input type="number" id="tip-percentage" min="0" max="100" value="15" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 1rem;">
+          </div>
+          
+          <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+            <button id="calculate-btn" class="btn btn-calculate" style="flex: 1; background-color: var(--primary-color); color: white; padding: 1rem; font-weight: bold;">
+              <i class="fas fa-calculator"></i> Calculate Total
+            </button>
+            
+            <button id="use-cart-total-btn" class="btn btn-use-cart" style="flex: 1; background-color: #28a745; color: white; padding: 1rem; font-weight: bold;">
+              <i class="fas fa-shopping-cart"></i> Use Cart Total
+            </button>
+          </div>
+        </div>
+        
+        <div class="calculator-result" id="calculation-result" style="flex: 1; min-width: 280px; background-color: #f9f9f9; padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
+          <h4 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-color); font-size: 1.3rem;">Order Summary</h4>
+          <div class="result-row" style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--border-color);">
+            <span style="font-weight: bold;">Subtotal:</span>
+            <span style="font-weight: bold;">$<span id="calc-subtotal">0.00</span></span>
+          </div>
+          <div class="result-row" style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--border-color);">
+            <span style="font-weight: bold;">Tax (7.5%):</span>
+            <span style="font-weight: bold;">$<span id="calc-tax">0.00</span></span>
+          </div>
+          <div class="result-row" style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--border-color);">
+            <span style="font-weight: bold;">Tip:</span>
+            <span style="font-weight: bold;">$<span id="calc-tip">0.00</span></span>
+          </div>
+          <div class="result-row total" style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding: 1rem; background-color: var(--primary-color); color: white; border-radius: var(--radius-sm);">
+            <span style="font-weight: bold; font-size: 1.2rem;">TOTAL:</span>
+            <span style="font-weight: bold; font-size: 1.2rem;">$<span id="calc-total">0.00</span></span>
+          </div>
+          <div class="result-row per-person" style="display: flex; justify-content: space-between; margin-top: 1rem; padding: 0.8rem; background-color: rgba(139, 44, 0, 0.1); border-radius: var(--radius-sm);">
+            <span style="font-weight: bold;">Per Person:</span>
+            <span style="font-weight: bold;">$<span id="calc-per-person">0.00</span></span>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <p style="font-weight: bold; color: var(--primary-color);">Ready to order? Call us at <a href="tel:4027594144" style="color: var(--primary-color); text-decoration: underline;">(402) 759-4144</a></p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/sisters-logo.jpeg" alt="Sisters Cafe Logo" class="footer-logo-img">
+          <p>Homemade Food, Family Vibes, Community Love</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_new.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 310 S 13th St, Geneva, NE 68361</p>
+          <p><i class="fas fa-phone"></i> <a href="tel:4027594144">(402) 759-4144</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:sisterscafe806@gmail.com">sisterscafe806@gmail.com</a></p>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61573728355131" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://medium.com/@sisterscafe806" target="_blank" aria-label="Medium Blog"><i class="fab fa-medium"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sisters Cafe. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart"></i> in Geneva, NE</p>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="scroll-to-top" id="scrollToTop">
+    <button aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+  </div>
+  
+  <!-- Sticky Order Summary -->
+  <div class="order-summary-sticky" id="order-summary-sticky" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: white; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); z-index: 1000; transform: translateY(100%); transition: transform 0.3s ease; padding: 0;">
+    <div class="order-summary-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem;">
+      <div class="order-summary-details" style="flex: 1; min-width: 250px; padding: 0.5rem;">
+        <h4 style="margin: 0 0 0.5rem 0; color: var(--primary-color); font-size: 1.2rem;">Your Order Summary</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <p style="margin: 0;"><strong>Items:</strong> <span id="sticky-cart-count" style="font-weight: bold;">0</span></p>
+          <p style="margin: 0;"><strong>Subtotal:</strong> $<span id="sticky-cart-subtotal" style="font-weight: bold;">0.00</span></p>
+          <p style="margin: 0;"><strong>Tax (7.5%):</strong> $<span id="sticky-cart-tax" style="font-weight: bold;">0.00</span></p>
+          <p class="order-summary-total" style="margin: 0; color: var(--primary-color); font-size: 1.1rem;"><strong>Total:</strong> $<span id="sticky-cart-total" style="font-weight: bold;">0.00</span></p>
+        </div>
+      </div>
+      <div class="order-summary-actions" style="display: flex; gap: 0.8rem; padding: 0.5rem;">
+        <button id="sticky-checkout-btn" class="btn" style="background-color: #28a745; color: white; font-weight: bold; padding: 0.8rem 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="fas fa-shopping-cart"></i> Checkout
+        </button>
+        <button id="sticky-view-cart-btn" class="btn" style="background-color: #8b2c00; color: white; padding: 0.8rem 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="fas fa-eye"></i> View Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3>Order Summary</h3>
+        <button class="modal-close" id="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="order-summary">
+          <div class="order-items" id="modal-order-items">
+            <!-- Order items will be populated here -->
+          </div>
+          <div class="order-totals">
+            <div class="order-total-row">
+              <span>Subtotal:</span>
+              <span id="modal-subtotal">$0.00</span>
+            </div>
+            <div class="order-total-row">
+              <span>Tax (7.5%):</span>
+              <span id="modal-tax">$0.00</span>
+            </div>
+            <div class="order-total-row final">
+              <span>TOTAL:</span>
+              <span id="modal-total">$0.00</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Order Type Selection -->
+        <div class="order-type-selection" style="margin: 20px 0; padding: 15px; background-color: #f9f9f9; border-radius: 8px;">
+          <h4 style="margin-top: 0;">How would you like to order?</h4>
+          <div style="display: flex; gap: 15px; margin-top: 10px;">
+            <button id="pickup-option" class="btn order-type-btn active" style="flex: 1; padding: 12px;">
+              <i class="fas fa-shopping-bag"></i> Pickup
+            </button>
+            <button id="phone-option" class="btn order-type-btn" style="flex: 1; padding: 12px;">
+              <i class="fas fa-phone"></i> Call In
+            </button>
+          </div>
+        </div>
+        
+        <!-- Online Order Form -->
+        <form id="online-order-form" style="margin-top: 20px;">
+          <h4>Your Information</h4>
+          <div class="form-group" style="margin-bottom: 15px;">
+            <label for="customer-name">Name *</label>
+            <input type="text" id="customer-name" name="customer-name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+          </div>
+          <div class="form-group" style="margin-bottom: 15px;">
+            <label for="customer-phone">Phone Number *</label>
+            <input type="tel" id="customer-phone" name="customer-phone" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+          </div>
+          <div class="form-group" style="margin-bottom: 15px;">
+            <label for="pickup-time">Pickup Time *</label>
+            <select id="pickup-time" name="pickup-time" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+              <option value="">Select a pickup time</option>
+              <option value="asap">As soon as possible</option>
+              <option value="15min">In 15 minutes</option>
+              <option value="30min">In 30 minutes</option>
+              <option value="45min">In 45 minutes</option>
+              <option value="60min">In 1 hour</option>
+              <option value="custom">Specify time</option>
+            </select>
+          </div>
+          <div id="custom-time-container" style="display: none; margin-bottom: 15px;">
+            <label for="custom-pickup-time">Specify Pickup Time *</label>
+            <input type="time" id="custom-pickup-time" name="custom-pickup-time" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+          </div>
+          <div class="form-group" style="margin-bottom: 15px;">
+            <label for="order-notes">Special Instructions (optional)</label>
+            <textarea id="order-notes" name="order-notes" rows="3" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+          </div>
+        </form>
+        
+        <!-- Call-in Message (hidden by default) -->
+        <div id="call-in-message" class="order-message" style="display: none;">
+          <p>Please call Sisters Cafe at <strong>(402) 759-4144</strong> to make your order official.</p>
+          <p>Thank you for choosing Sisters Cafe!</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" id="cancel-order">Cancel</button>
+        <button class="btn" id="call-now" style="display: none; background-color: #28a745; color: white; font-weight: bold;">
+          <i class="fas fa-phone"></i> Call Now (402) 759-4144
+        </button>
+        <button type="submit" class="btn" id="submit-order" style="background-color: #28a745; color: white; font-weight: bold;">
+          <i class="fas fa-check"></i> Submit Order
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Order Confirmation Modal -->
+  <div class="modal-overlay" id="confirmation-modal" style="display: none;">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3>Order Confirmed!</h3>
+        <button class="modal-close" id="close-confirmation">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="text-align: center; padding: 20px;">
+          <i class="fas fa-check-circle" style="font-size: 60px; color: #28a745; margin-bottom: 20px;"></i>
+          <h4>Thank you for your order!</h4>
+          <p>Your order has been received and will be ready for pickup at your requested time.</p>
+          <p>Order #: <span id="order-number">12345</span></p>
+          <div id="confirmation-details" style="margin-top: 20px; text-align: left; background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+            <p><strong>Name:</strong> <span id="conf-name"></span></p>
+            <p><strong>Pickup Time:</strong> <span id="conf-time"></span></p>
+            <p><strong>Total:</strong> <span id="conf-total"></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" id="close-confirmation-btn" style="background-color: #8b2c00; color: white;">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load menu data first -->
+  <script src="menu-data.js"></script>
+  <!-- Load the standalone menu script -->
+  <script src="menu-script.js?v=1.1"></script>
+  <!-- Then load the main script for other functionality -->
+  <script src="script.js"></script>
+</body>
+</html>

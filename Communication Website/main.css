@@ -1,0 +1,46 @@
+
+body{
+    background-color:lightyellow ;
+} /*This creates background color*/
+.lets{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    
+} /*This styles everyting associate within the div class labled in the html*/
+.title{ 
+    border-color: aqua; border-style: solid;
+    font-size: 80px;
+text-decoration: wavy;
+font-family: 'Courier', Times, serif;}/*Formats or styles the Titler*/
+.pagelinks{
+color: rgb(13, 117, 208);
+font-size: 25px;
+text-align: left;
+text-transform: capitalize;
+display: grid; 
+grid-auto-flow: column; 
+gap: 200px; 
+}/*This formats page links, and spaces them*/
+.didyouknow{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15 px;
+    text-decoration: underline;}/* formats heading/ and styles*/
+.wtc{ 
+    font-family: fantasy;
+    font-size: 40px;}/* formats heading*/
+.examples{font-family: 'Courier New', Courier, monospace;
+font-size: 35px;
+font-style: oblique;}
+.types{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 13px;}/*formats heading*/
+.percent{
+    font-style: bold; font-style: italic; text-decoration: underline;}
+    .types{font-style: oblique;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+text-decoration: underline;}/*formats unordered list*/
+    .some{
+    text-align: center;
+    font-size: 25px;
+    font-family:fantasy ;
+}/*formats sentence below unordered list*/

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Data Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 5px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Menu Data Test</h1>
+  <p>This page tests if the menu data is being loaded correctly.</p>
+  
+  <h2>Menu Data:</h2>
+  <pre id="menu-data-display">Loading...</pre>
+  
+  <script src="menu-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const display = document.getElementById('menu-data-display');
+      
+      // Check if menu data is available
+      if (window.menuData) {
+        display.textContent = JSON.stringify(window.menuData, null, 2);
+      } else {
+        display.textContent = 'Error: Menu data not found!';
+      }
+    });
+  </script>
+</body>
+</html>
