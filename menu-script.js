@@ -667,6 +667,15 @@ document.addEventListener('DOMContentLoaded', function() {
       // Send order to email service
       sendOrderEmail(orderData);
       
+      // Send SMS notification to the store
+      if (window.sendOrderSMS) {
+        window.sendOrderSMS(orderData)
+          .then(result => console.log('SMS notification result:', result))
+          .catch(error => console.error('Error sending SMS notification:', error));
+      } else {
+        console.error('SMS service not available');
+      }
+      
       // Update confirmation modal with order details
       document.getElementById('order-number').textContent = orderNumber;
       document.getElementById('conf-name').textContent = customerName;
