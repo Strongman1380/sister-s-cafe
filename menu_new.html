@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
+  <a href="#menu-container" class="skip-link">Skip to main content</a>
   <nav class="navbar sticky">
     <div class="container">
       <a class="navbar-brand" href="index.html">
@@ -26,6 +27,7 @@
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="menu_new.html" aria-current="page"><i class="fas fa-utensils"></i> Menu</a></li>
         <li><a href="about.html"><i class="fas fa-users"></i> About Us</a></li>
+        <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
         <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
         <li class="phone-link"><a href="tel:4027594144"><i class="fas fa-phone"></i> (402) 759-4144</a></li>
       </ul>
@@ -49,11 +51,14 @@
       </div>
     </div>
     
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-      <input type="text" id="menu-search" placeholder="Search menu items..." />
-      <div>
-        <label for="category-filter" style="margin-right: 10px;">Filter by:</label>
-        <select id="category-filter" style="padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+    <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
+      <div style="width: 100%;">
+        <label for="menu-search" class="sr-only">Search menu items</label>
+        <input type="text" id="menu-search" placeholder="Search menu items..." aria-label="Search menu items" />
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <label for="category-filter" style="margin-right: 10px; font-weight: 600;">Filter by:</label>
+        <select id="category-filter" style="padding: 10px; border-radius: 5px; border: 1px solid #ddd;" aria-label="Filter menu by category">
           <option value="all">All Categories</option>
           <option value="Appetizers">Appetizers</option>
           <option value="Soups">Soups</option>
@@ -171,6 +176,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="menu_new.html">Menu</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -301,7 +307,7 @@
         
         <!-- Call-in Message (hidden by default) -->
         <div id="call-in-message" class="order-message" style="display: none;">
-          <p>Please call Sisters Cafe at <strong>(402) 759-4144</strong> to make your order official.</p>
+          <p>Please call Sisters Cafe at <strong><a href="tel:4027594144" style="color: var(--primary-color); text-decoration: none;">(402) 759-4144</a></strong> to make your order official.</p>
           <p>Thank you for choosing Sisters Cafe!</p>
         </div>
       </div>
@@ -347,10 +353,8 @@
 
   <!-- Load menu data first -->
   <script src="menu-data.js"></script>
-  <!-- Load the Twilio SMS service -->
-  <script src="twilio-service.js"></script>
   <!-- Load the standalone menu script -->
-  <script src="menu-script.js?v=1.2"></script>
+  <script src="menu-script.js?v=1.1"></script>
   <!-- Then load the main script for other functionality -->
   <script src="script.js"></script>
 </body>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Read the latest blog posts from Sisters Cafe in Geneva, NE. Get recipes, stories, and updates from our kitchen to your table." />
+  <meta name="keywords" content="Sisters Cafe blog, Geneva NE, recipes, cafe stories, food blog" />
+  <title>Sisters Cafe - Blog</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="48060"></script>
+</head>
+<body>
+  <nav class="navbar sticky">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/sisters-logo.jpeg" alt="Sisters Cafe Logo" class="logo" />
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger-icon"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="menu_new.html"><i class="fas fa-utensils"></i> Menu</a></li>
+        <li><a href="about.html"><i class="fas fa-users"></i> About Us</a></li>
+        <li><a href="blog.html" aria-current="page"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li class="phone-link"><a href="tel:4027594144"><i class="fas fa-phone"></i> (402) 759-4144</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content" style="text-align: center;">
+      <h1>Sisters Cafe Blog</h1>
+      <p>Stories, recipes, and updates from our kitchen to your table</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="menu-section">
+      <h2><i class="fas fa-rss"></i> Latest Blog Posts</h2>
+      <p style="text-align: center; margin-bottom: 20px;">Stay updated with our latest news, recipes, and stories from Sisters Cafe</p>
+      
+      <div id="rss-widget-container" style="margin-bottom: 2rem; min-height: 400px; padding: 1rem; background-color: #f8f9fa; border-radius: 8px;">
+        <rssapp-wall id="qstvCWIRQhOccsGE"></rssapp-wall>
+        <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+        
+        <!-- Fallback message while RSS loads -->
+        <div id="rss-loading" style="text-align: center; padding: 2rem; color: #666;">
+          <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+          <p>Loading latest blog posts...</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="https://medium.com/@sisterscafe806" target="_blank" class="btn btn-primary">
+          <i class="fab fa-medium"></i> Read More on Medium
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/sisters-logo.jpeg" alt="Sisters Cafe Logo" class="footer-logo-img">
+          <p>Homemade Food, Family Vibes, Community Love</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_new.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 310 S 13th St, Geneva, NE 68361</p>
+          <p><i class="fas fa-phone"></i> <a href="tel:4027594144">(402) 759-4144</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:sisterscafe806@gmail.com">sisterscafe806@gmail.com</a></p>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61573728355131" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://medium.com/@sisterscafe806" target="_blank" aria-label="Medium Blog"><i class="fab fa-medium"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sisters Cafe. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart"></i> in Geneva, NE</p>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="scroll-to-top" id="scrollToTop">
+    <button aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
