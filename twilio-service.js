@@ -8,8 +8,8 @@
  */
 function sendOrderSMS(orderData) {
   // Twilio account credentials - Replace with your actual credentials when testing
-  const accountSid = 'YOUR_TWILIO_ACCOUNT_SID'; // Replace with your Twilio Account SID
-  const authToken = 'YOUR_TWILIO_AUTH_TOKEN';   // Replace with your Twilio Auth Token
+  const accountSid = 'AC6b7af2a5152724ba17fe1ac9f4561429'; // Replace with your Twilio Account SID
+  const authToken = '9a072904b436d70ab7284e3650cec67d';   // Replace with your Twilio Auth Token
   const twilioNumber = '+18336931045';          // Your Twilio phone number
   const storeNumber = '+14027592210';           // Store's phone number for receiving notifications
   
